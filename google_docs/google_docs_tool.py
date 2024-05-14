@@ -84,33 +84,7 @@ class CreateDocument(Action):
                 "response_data": {"success": False, "error": str(e)},
             }
 
-class TextStyle(BaseModel):
-    bold: Optional[bool] = Field(
-        default=None,
-        description="Indicates if the text should be bold.",
-        example=True
-    )
-    italic: Optional[bool] = Field(
-        default=None,
-        description="Indicates if the text should be italicized.",
-        example=False
-    )
-    underline: Optional[bool] = Field(
-        default=None,
-        description="Indicates if the text should be underlined.",
-        example=False
-    )
-    strikethrough: Optional[bool] = Field(
-        default=None,
-        description="Indicates if the text should have a strikethrough.",
-        example=False
-    )
-    font_size: Optional[int] = Field(
-        default=None,
-        description="The size of the font in points.",
-        example=14
-    )
-    # Add more style options as needed
+
 
 class AppendTextToDocumentRequest(BaseModel):
     document_id: str = Field(
@@ -122,11 +96,6 @@ class AppendTextToDocumentRequest(BaseModel):
         ...,
         description="The plain text to append to the document.",
         example="This is some text that will be appended."
-    )
-    text_style: Optional[TextStyle] = Field(
-        default=None,
-        description="The style to apply to the text being appended. Leave null if no styling is needed.",
-        example=TextStyle(bold=True, font_size=14)
     )
 
 class AppendTextToDocumentResponse(BaseModel):
