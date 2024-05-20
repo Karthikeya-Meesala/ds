@@ -1,6 +1,5 @@
-name: GoogleDocs3
+name: Google Docs
 docs: https://docs.composio.dev/docs/google-docs
-unique_key: googledocs3
 description: Google Docs is a web-based collaborative software office suite by Google.
 logo: https://raw.githubusercontent.com/SamparkAI/open-logos/853011bff173624654a8f7b64b2399cf2d9e84b3/google-docs.svg
 categories: [productivity, documents]
