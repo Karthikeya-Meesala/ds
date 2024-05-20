@@ -1,5 +1,5 @@
-name: GoogleMeet
-unique_key: googlemeet
+name: Google_Meet
+unique_key: google_meet
 docs: https://docs.composio.dev/apps/google-meet
 description: Google Calendar is a time-management and scheduling calendar service developed by Google.
 logo: https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v1/web-96dp/logo_meet_2020q4_color_2x_web_96dp.pngs
@@ -10,12 +10,7 @@ auth_schemes:
     auth_mode: OAUTH2
     authorization_url: "https://accounts.google.com/o/oauth2/v2/auth"
     token_url: "https://oauth2.googleapis.com/token"
-    default_scopes:
-      [
-        "https://www.googleapis.com/auth/drive.readonly",
-        "https://www.googleapis.com/auth/meetings.space.created",
-        "https://www.googleapis.com/auth/meetings.space.readonly"
-      ]
+    default_scopes: ["https://www.googleapis.com/auth/drive.readonly"]
     authorization_params:
       response_type: code
       access_type: offline
