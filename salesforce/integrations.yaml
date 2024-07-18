@@ -1,0 +1,27 @@
+name: Salesforce
+unique_key: salesforce
+docs: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm
+description: Salesforce is a customer relationship management solution that brings companies and customers together.
+logo: https://raw.githubusercontent.com/SamparkAI/open-logos/2174415fce40225ab0e09cf5634b6d6484da6747/salesforce.svg
+categories: [crm]
+
+auth_schemes:
+  - scheme_name: salesforce_oauth2
+    auth_mode: OAUTH2
+    authorization_url: "https://login.salesforce.com/services/oauth2/authorize"
+    token_url: "https://login.salesforce.com/services/oauth2/token"
+    default_scopes: ["full"]
+    token_params:
+      grant_type: authorization_code
+    authorization_params:
+      response_type: code
+      prompt: consent
+    proxy:
+      base_url: "https://{{instanceUrl}}.my.salesforce.com"
+    fields:
+      - name: instanceUrl
+        expected_from_customer: true 
+        displayName: Instance URL
+        description: "The base URL for your Salesforce instance, used for API requests."
+        type: string
+        required: true
